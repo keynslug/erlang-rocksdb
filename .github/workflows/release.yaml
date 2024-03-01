@@ -2,6 +2,8 @@ name: Release
 
 on:
   push:
+    branches:
+      - "fix/*"
     tags:
       - "*"
   workflow_dispatch:
@@ -75,26 +77,26 @@ jobs:
       fail-fast: false
       matrix:
         builder:
-          - 5.2-7:1.15.7-25.3.2-2
+          # - 5.2-7:1.15.7-25.3.2-2
           - 5.2-7:1.15.7-26.1.2-1
         arch:
           - amd64
           - arm64
         os:
           - ubuntu22.04
-          - ubuntu20.04
-          - ubuntu18.04
-          - debian12
-          - debian11
+          # - ubuntu20.04
+          # - ubuntu18.04
+          # - debian12
+          # - debian11
           - debian10
           - el9
-          - el8
+          # - el8
           - el7
           - amzn2
-          - amzn2023
+          # - amzn2023
           - alpine3.15.1
 
-    runs-on: "aws-${{ matrix.arch }}"
+    runs-on: "ubuntu-latest"
 
     steps:
       - uses: actions/checkout@v3
