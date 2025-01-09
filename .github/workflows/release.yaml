@@ -66,13 +66,13 @@ jobs:
           - amd64
           - arm64
         os:
-          - ubuntu24.04
+          # - ubuntu24.04
           - ubuntu22.04
           # - ubuntu20.04
           - debian12
-          - debian11
+          # - debian11
           # - debian10
-          - el9
+          # - el9
           # - el8
           # - el7
           # - amzn2
